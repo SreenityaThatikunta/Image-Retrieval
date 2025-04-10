@@ -172,7 +172,7 @@ def main():
     clf.evaluate(X_test, test_labels, train_dataset.classes)
 
     # Step 5: Save everything
-    with open("full_pipeline.pkl", "wb") as f:
+    with open("LR.pkl", "wb") as f:
         pickle.dump({
             'train_feats': train_feats,
             'test_feats': test_feats,
@@ -182,7 +182,7 @@ def main():
             'classifier': clf.model,
             'classes': train_dataset.classes
         }, f)
-    print("✅ Saved all components to full_pipeline.pkl")
+    print("✅ Saved all components to LR.pkl")
 
     # Step 6: Predict + show
     visualizer = PredictorVisualizer(extractor, lda, clf, data_handler.transform, test_dataset)
